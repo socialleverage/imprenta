@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["rafaelchacon@gmail.com"]
   spec.description   = %q{Publish and serve static html pages with Rails}
   spec.summary       = %q{This gem helps the process of publishing and serving static pages within rails}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/skyscrpr/imprenta"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
