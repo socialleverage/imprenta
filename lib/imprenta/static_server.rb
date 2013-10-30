@@ -2,7 +2,6 @@ module Imprenta
   class StaticServer
     def initialize(args = {})
       @middleware_stack = args.fetch(:middlewares)
-      # @middleware_stack.use Bugsnag::Rack
     end
 
     def call(env)

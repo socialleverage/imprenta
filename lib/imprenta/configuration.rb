@@ -12,8 +12,8 @@ module Imprenta
       setup_default_middlewares
     end
 
-    def configure(&block)
-      block.call
+    def configure
+      yield self
     end
 
     def reset
