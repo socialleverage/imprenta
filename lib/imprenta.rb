@@ -10,8 +10,7 @@ module Imprenta
   class << self
 
     def server
-      Imprenta::StaticServer.new(middlewares: configuration.middlewares,
-                                 custom_domain: configuration.custom_domain)
+      Imprenta::StaticServer.new
     end
 
     def configuration

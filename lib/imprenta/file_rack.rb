@@ -2,8 +2,8 @@ module Imprenta
   class FileRack
     attr_accessor :custom_domain
 
-    def initialize(args = {})
-      @custom_domain = args[:custom_domain]
+    def initialize
+      @custom_domain = Imprenta.configuration.custom_domain
     end
 
     def call(env)
