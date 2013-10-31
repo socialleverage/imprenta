@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/skyscrpr/imprenta.png?branch=master)](http://travis-ci.org/skyscrpr/imprenta)
+
 # Imprenta
 
 The goal of this gem is to provide an easy and efficient way to generate and serve
@@ -36,7 +38,7 @@ def publish
   redirect_to root_path, success: 'Yei page published!'
 end
 ```
-  
+
 
 
 Then in your routes add the following:
