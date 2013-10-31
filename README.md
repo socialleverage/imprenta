@@ -1,4 +1,5 @@
 [![Build Status](https://api.travis-ci.org/skyscrpr/imprenta.png?branch=master)](http://travis-ci.org/skyscrpr/imprenta)
+[![Code Climate](https://codeclimate.com/repos/5272d3faf3ea004b9c013f64/badges/53c51fa28cabe58bf214/gpa.png)](https://codeclimate.com/repos/5272d3faf3ea004b9c013f64/feed)
 
 # Imprenta
 
