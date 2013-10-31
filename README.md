@@ -27,37 +27,34 @@ Or install it yourself as:
 
 In the action that you want to cache, use something like the following:
 
-``ruby
+```ruby
+def publish
+  imprenta_cache_template(template:  "path/to/template",
+                          layout: 'application',
+                          id: 'mytemplateid')
 
-  def publish
-    imprenta_cache_template(template:  "path/to/template",
-                            layout: 'application',
-                            id: 'mytemplateid')
+  redirect_to root_path, success: 'Yei page published!'
+end
+```
+  
 
-    redirect_to media_kit_path(@media_kit), notice: 'Media Kit Published'
-  end
-``
 
 Then in your routes add the following:
 
-``ruby
-
-  get 'mystatic-pages/:id', :to => Imprenta.server
-
-``
+```ruby
+get 'mystatic-pages/:id', :to => Imprenta.server
+```
 
 ## Configuration
 
-Imprenta allows you to customize the Rack server with your own middlewares. By defaut, it
+Imprenta allows you to customize the Rack Server (Imprenta.server) with your own middlewares. By defaut, it
 will have loaded a middleware to handle 500,400,401,404, etc.
 
-``ruby
-
+```ruby
 Imprenta.configure do |config|
   config.middlewares.use Bugsnag::Rack
 end
-
-``
+```
 
 ## Contributing
 
