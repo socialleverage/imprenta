@@ -1,8 +1,6 @@
 module Imprenta
   class StaticServer
 
-    attr_accessor :custom_domain
-
     def initialize
       @middleware_stack = Imprenta.configuration.middlewares
     end
