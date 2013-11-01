@@ -4,7 +4,7 @@ describe Imprenta::Storage::File do
   let(:storage)  { described_class.new}
 
   after do
-    FileUtils.rm_rf(File.join([File.dirname(__FILE__), "../", "dummy", "public", "imprenta"]))
+    FileUtils.rm_rf(File.join([File.dirname(__FILE__), "dummy", "public", "imprenta"]))
   end
 
   context "#persist" do
