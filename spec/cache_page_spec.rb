@@ -21,6 +21,7 @@ describe "Cache Page Module" do
     end
 
     it "creates file with the content provided" do
+      controller.imprenta_cache_page("test", "test")
       file = File.open(path, 'r')
       expect(file.read).to eq("test")
     end
