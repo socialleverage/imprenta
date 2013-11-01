@@ -16,5 +16,11 @@ describe "Visiting a published page" do
       expect(page.status_code).to eq(200)
       expect(page).to have_content("dummy")
     end
+
+    it "responds with 404 when the page doesn't exists" do
+      visit '/imprenta/nonexistentid'
+      expect(page.status_code).to eq(404)
+      expect(page).to have_content("The page you were looking for doesn't exist")
+    end
   end
 end
