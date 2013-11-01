@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe "Imprenta configuraion" do
+  before do
+    Imprenta.configuration.reset
+  end
+
   context "defaults"  do
     it "custom_domain is set to false" do
       expect(Imprenta.configuration.custom_domain).to be_false
