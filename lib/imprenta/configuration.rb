@@ -5,6 +5,8 @@ module Imprenta
     VALID_OPTIONS_KEYS = [:middlewares,
                           :storage,
                           :custom_domain,
+                          :aws_access_key_id,
+                          :aws_secret_access_key,
                           :development]
 
     attr_accessor *VALID_OPTIONS_KEYS
