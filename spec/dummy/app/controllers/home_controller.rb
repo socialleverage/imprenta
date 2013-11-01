@@ -5,5 +5,6 @@ class HomeController < ApplicationController
 
   def publish
     imprenta_cache_template(template: 'home/dummy', id: 'testing')
+    redirect_to '/imprenta'
   end
 end
