@@ -1,11 +1,11 @@
 [![Build Status](https://api.travis-ci.org/skyscrpr/imprenta.png?branch=master)](http://travis-ci.org/skyscrpr/imprenta)
 [![Code Climate](https://codeclimate.com/repos/5272d3faf3ea004b9c013f64/badges/53c51fa28cabe58bf214/gpa.png)](https://codeclimate.com/repos/5272d3faf3ea004b9c013f64/feed)
 
-# Imprenta
+# Imprenta - Publish and Serve Static Pages within Rails.
 
 The goal of this gem is to provide an easy and efficient way to generate and serve
 static pages within Rails. The perfect use case for this gem is when your users
-generate some content that gets published and then it barely changes. e.g: a blog post,
+generate some content that gets published and after this it almost never change. e.g: a blog post,
 landing page, about.me, etc.
 
 The gem will provide with methods to save generated templates as static html pages.
@@ -40,14 +40,18 @@ def publish
 end
 ```
 
-
-
 Then in your routes add the following:
 
 ```ruby
 get 'mystatic-pages/:id', :to => Imprenta.server
 ```
 
+Now if you go to your server to following url:
+```code
+http://localhost:3000/mystatic-pages/mytemplateid
+```
+
+You should be able to see the page you cached in the publish action. 
 ## Configuration
 
 Imprenta allows you to customize the Rack Server (Imprenta.server) with your own middlewares. By defaut, it
