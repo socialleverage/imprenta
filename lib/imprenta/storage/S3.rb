@@ -2,9 +2,10 @@ module Imprenta
   module Storage
     class S3
 
-      attr_accessor :connection
+      attr_accessor :connection, :bucket
 
       def initialize
+        @bucket = Imprenta.configuration.aws_bucket
         @connection = Fog::Storage.new(provider: 'AWS',
                                        aws_access_key_id: Imprenta.configuration.aws_access_key_id,
                                        aws_secret_access_key: Imprenta.configuration.aws_secret_access_key)
@@ -31,7 +32,7 @@ module Imprenta
       end
 
       def directory
-        @directory ||= connection.directories.create(key: 'imprenta', public: true)
+        @directory ||= connection.directories.create(key: bucket, public: true)
       end
     end
   end

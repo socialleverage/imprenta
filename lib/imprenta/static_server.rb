@@ -15,6 +15,5 @@ module Imprenta
     def build_app
       @app ||= @middleware_stack.build(Imprenta::ContentRack.new)
     end
-
   end
 end

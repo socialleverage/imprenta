@@ -7,6 +7,7 @@ module Imprenta
                           :custom_domain,
                           :aws_access_key_id,
                           :aws_secret_access_key,
+                          :aws_bucket,
                           :development]
 
     attr_accessor *VALID_OPTIONS_KEYS

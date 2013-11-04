@@ -4,7 +4,11 @@ module Imprenta
 
     def initialize
       @custom_domain = Imprenta.configuration.custom_domain
-      @content_server = Imprenta::ContentServer::File.new
+      @content_server = case Imprenta.configuration.storage
+                          when :file then Imprenta::ContentServer::File.new
+                          when :s3 then Imprenta::ContentServer::S3.new
+                          else raise StandardError.exception("Invalid storage provider")
+                        end
     end
 
     def call(env)
