@@ -3,6 +3,7 @@ module Imprenta
     # Same configuration pattern that sferik uses in:
     # https://github.com/sferik/mtgox/blob/master/lib/mtgox/configuration.rb
     VALID_OPTIONS_KEYS = [:middlewares,
+                          :storage,
                           :custom_domain,
                           :development]
 
@@ -20,6 +21,7 @@ module Imprenta
     def reset
       self.middlewares = ActionDispatch::MiddlewareStack.new
       self.development = false
+      self.storage = :file
       self.custom_domain = false
     end
 
