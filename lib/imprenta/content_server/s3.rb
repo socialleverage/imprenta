@@ -15,6 +15,7 @@ module Imprenta
           body = content.read
           content.close
           headers = content.meta.slice("etag", "last-modified", "content-type")
+          headers['Cache-Control'] = 'max-age=3600'
           [200, headers, [body]]
         else
           raise ::ActionController::RoutingError.exception("Page Not Found")
