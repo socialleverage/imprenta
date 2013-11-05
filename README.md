@@ -39,6 +39,7 @@ def publish
   redirect_to root_path, success: 'Yei page published!'
 end
 ```
+The id that just past to the method, is the one that Imprenta rack will use to find the static page.
 
 Then in your routes add the following:
 
