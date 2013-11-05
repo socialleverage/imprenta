@@ -13,7 +13,11 @@ module Imprenta
     private
 
     def storage
-      @storage ||= Imprenta::Storage::File.new
+      @storage ||= case Imprenta.configuration.storage
+                     when :file then Imprenta::Storage::File.new
+                     when :s3 then Imprenta::Storage::S3.new
+                     else raise StandardError.exception("Invalid storage provider")
+                   end
     end
   end
 end

@@ -1,10 +1,14 @@
 require "imprenta/version"
 require "rails"
+require "fog"
 require "imprenta/configuration"
-require "imprenta/file_rack"
-require "imprenta/cache_page"
-require "imprenta/static_server"
 require "imprenta/storage/file"
+require "imprenta/storage/S3"
+require "imprenta/cache_page"
+require "imprenta/content_server/file"
+require "imprenta/content_server/s3"
+require "imprenta/content_rack"
+require "imprenta/static_server"
 require "imprenta/rails"
 
 module Imprenta

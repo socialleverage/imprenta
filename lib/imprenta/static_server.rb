@@ -13,8 +13,7 @@ module Imprenta
     private
 
     def build_app
-      @app ||= @middleware_stack.build(Imprenta::FileRack.new)
+      @app ||= @middleware_stack.build(Imprenta::ContentRack.new)
     end
-
   end
 end
