@@ -68,7 +68,7 @@ end
 ### Storage
 
 Imprenta provides two kinds of storage to save the static pages: File and S3. The default one is file.
-If you want to use s3. You can configure the gem the following way:
+If you want to use s3, you can configure the gem the following way:
 
 
 ```ruby
