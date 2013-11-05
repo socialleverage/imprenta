@@ -81,15 +81,28 @@ end
 ```
 
 When using s3, it is strongly advisable to use it in conjunction with a reverse proxy (Varnish, Squid). 
-Otherwise, it will be hitting s3 for every request. In rails yo could use rack-cache with
+Otherwise, it will be hitting s3 for every request. In rails you could use rack-cache and memcached with
 a configuration like this: 
+
+In your Gemfile:
+
+```ruby
+gem 'rack-cache'
+gem 'dalli'
+```
+
+Then, in your initializer: 
 
 ```ruby
 Imprenta.configure do |config|
+
+  client = Dalli::Client.new('localhost:11211',
+                             :value_max_bytes => 10485760)
+
   config.middlewares.use Rack::Cache,
                          verbose: true,
-                         metastore: "memcached://localhost:11211/meta",
-                         entitystore: "memcached://localhost:11211/body"
+                         metastore: client, 
+                         entitystore: client,
 end
 ```
 
